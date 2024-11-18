@@ -14,8 +14,6 @@ body, html{
     margin: 0;
     padding: 0;
     height: 100%;
-
- 
 }
 
 .a{
@@ -24,20 +22,23 @@ body, html{
     justify-content: center;
     align-items: center;
     font-size: 2em;
-    /* text-align: center; */
+    text-align: center;
     background-color: lightgray;
     border-bottom: 1px solid #ccc;
-     /* Fast scroll transition */
+    transition: transform 0.5s ease;
   }
 
 nav{
     position: fixed;
-    background-color: #4a4b5e;
+    background-color: #a54545;
     color: white;
     margin: 0;
     padding: 0;
     width: 100%;
     z-index: 1000;
+    border-top: 2px solid #fff2f2;
+    border-bottom: 2px solid #fff2f2;
+
 }
 
 nav ul{
@@ -46,6 +47,7 @@ nav ul{
     padding: 0;
     display: flex;
     justify-content: center;
+    
 }
 
 nav ul li{
@@ -61,10 +63,11 @@ nav ul li a{
     transition: background-color 0.3s, color 0.3s;
     font-size: 20px;
     z-index: 10000;
+
 }
 
 nav ul li a:hover{
-    background-color: #606387;
+    background-color: #da7676;
 }
 
 #home{
@@ -109,79 +112,60 @@ video{
 
 }
 
-.text h2 {
-    font-size: 40px;
-    font-weight: 800;
-    color: #fff;
-    line-height: 70px;
-
-}
 
 
 .background-section{
     margin-top: -100;
     width: 100%;
-    background-color: #555d6b;
+    background-color: #c07878;
+ 
 }
 
+.background-section .gi{
+    width: 100%;
+    margin: 0;
+    height: 100%;
+}
+
+
 #description{
-    background-color: #323a55;
+    background-color: #ff0000;
     z-index: -20;
     height: 100vh;
 }
+
 
 .box{
     transition: 0.8s;
     position: absolute;
     width: 70%;
-
     height: 70%;
     padding: 20px;
-    background-color: #323a55;
-    border-top: 30px solid #fff2f2;
-    border-bottom: 30px solid #fff2f2;
-    border-left: 15px solid #858383;
-    border-right: 15px solid #555555;
+    background: linear-gradient(180deg,#a35b5b,#b96969,#ca7171,#da918f);
+    border-top: 30px solid rgb(223, 114, 114);
+    border-bottom: 30px solid rgb(223, 114, 114);
+    border-left: 15px solid #d46464;
+    border-right: 15px solid #d46464;
     border-radius: 8px;
     box-sizing: border-box;
+    display: flex;
     
 }
 
-.triangle{
-    margin-top: -30px;
-    margin-left: 59vw;
-    width: 0;
-    height: 0;
-    border-left: 40px solid transparent;
-    border-right: 40px solid transparent;
-    border-top: 50px solid #ffffff;
-
+.box::before {
+    content: ''; /* Necessary for pseudo-elements to appear */
+    position: absolute;
+    top: -45px; /* Adjusts the position of the dashed border relative to the solid border */
+    left: 0;
+    width: 100%; /* Full width of the element */
+    border-top: 15px dashed rgb(224, 63, 42); 
 }
 
-.triangle2{
-    margin-top: -40px;
-    margin-left: 54vw;
-    width: 0;
-    height: 0;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    border-bottom: 25px solid #ffffff;
-}
-
-.triangle3{
-    margin-top: -23px;
-    margin-left: 52.5vw;
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 20px solid #ffffff;
-}
 .background-section p{
     transition: 0.8s;
-    margin-left: 20px;
-    margin-right: 40px;
-    margin-top: 110px;
+    margin-left: 28vw;
+    margin-right: 60px;
+    margin-top: 80px;
     position: absolute;
     text-align: center;
     display: inline-block;
@@ -193,10 +177,42 @@ video{
 
 .background-section img{
     transition: 0.8s;
-    margin-left: 50px;
-    margin-top: 110px;
+    margin-left: 40px;
+    width: 30%;
     height: auto;
     margin-right: 10px;
+}
+
+
+.triangle{
+    margin-top: -30px;
+    margin-left: 29vw;
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-top: 50px solid #ffffff;
+
+}
+
+.triangle2{
+    margin-top: -20px;
+    margin-left: -13vw;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 25px solid #ffffff;
+}
+
+.triangle3{
+    margin-top: -23px;
+    margin-left: -5vw;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #ffffff;
 }
 
 /* .pic  {
