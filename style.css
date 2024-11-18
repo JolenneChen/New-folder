@@ -7,8 +7,28 @@
     /*padding and border are included in the width and height*/
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-  }
+    scroll-behavior: smooth;
+}
 
+body, html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+
+ 
+}
+
+.a{
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    /* text-align: center; */
+    background-color: lightgray;
+    border-bottom: 1px solid #ccc;
+     /* Fast scroll transition */
+  }
 
 nav{
     position: fixed;
@@ -35,11 +55,11 @@ nav ul li{
 nav ul li a{
     display: block;
     /* 15px : top bottom, 20px : left right */
-    padding: 15px 150px;
+    padding: 15px 140px;
     text-decoration: none;
     color: #fff;
     transition: background-color 0.3s, color 0.3s;
-    font-size: 23px;
+    font-size: 20px;
     z-index: 10000;
 }
 
@@ -47,12 +67,19 @@ nav ul li a:hover{
     background-color: #606387;
 }
 
+#home{
+    background-color: #323a55;
+    z-index: -20;
+    height: 100vh;
+}
+
 
 video{
-    z-index: -2;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     object-fit: cover;
     margin: 0 auto;
     position: relative;
@@ -64,11 +91,11 @@ video{
 .text{
     justify-content: center;
     align-items: center;
-    top: 400px;
+    top: 48%;
     position: absolute;
     z-index: 10;
     padding-top: 20px;
-    padding-left: 200px;
+    margin-right: 40%;
     color: #fff;
     letter-spacing: 4px ;
     transition: 0.8s ;
@@ -90,19 +117,24 @@ video{
 
 }
 
+
 .background-section{
     margin-top: -100;
-    min-height: 1000px;
     width: 100%;
     background-color: #555d6b;
+}
+
+#description{
+    background-color: #323a55;
+    z-index: -20;
+    height: 100vh;
 }
 
 .box{
     transition: 0.8s;
     position: absolute;
     width: 70%;
-    margin-top: 9vw;
-    margin-left: 15vw;
+
     height: 70%;
     padding: 20px;
     background-color: #323a55;
@@ -148,7 +180,8 @@ video{
 .background-section p{
     transition: 0.8s;
     margin-left: 20px;
-    margin-top: 170px;
+    margin-right: 40px;
+    margin-top: 110px;
     position: absolute;
     text-align: center;
     display: inline-block;
@@ -161,7 +194,7 @@ video{
 .background-section img{
     transition: 0.8s;
     margin-left: 50px;
-    margin-top: 120px;
+    margin-top: 110px;
     height: auto;
     margin-right: 10px;
 }
