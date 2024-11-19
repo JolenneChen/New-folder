@@ -18,6 +18,7 @@ body, html{
 
 .a{
     height: 100vh; /* Full viewport height */
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,6 +27,7 @@ body, html{
     background-color: lightgray;
     border-bottom: 1px solid #ccc;
     transition: transform 0.5s ease;
+    
   }
 
 nav{
@@ -115,8 +117,8 @@ video{
 
 
 .background-section{
-    margin-top: -100;
     width: 100%;
+    height: 100%;
     background-color: #c07878;
  
 }
@@ -125,22 +127,23 @@ video{
     width: 100%;
     margin: 0;
     height: 100%;
+    display: block;
 }
 
 
 #description{
-    background-color: #ff0000;
     z-index: -20;
     height: 100vh;
 }
+
 
 
 .box{
     transition: 0.8s;
     position: absolute;
     width: 70%;
-    height: 70%;
     padding: 20px;
+    transform: translate(-120%,-50%);
     background: linear-gradient(180deg,#a35b5b,#b96969,#ca7171,#da918f);
     border-top: 30px solid rgb(223, 114, 114);
     border-bottom: 30px solid rgb(223, 114, 114);
@@ -149,6 +152,9 @@ video{
     border-radius: 8px;
     box-sizing: border-box;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
     
 }
 
@@ -163,7 +169,7 @@ video{
 
 .background-section p{
     transition: 0.8s;
-    margin-left: 28vw;
+    margin-left: 33vw;
     margin-right: 60px;
     margin-top: 80px;
     position: absolute;
@@ -177,12 +183,17 @@ video{
 
 .background-section img{
     transition: 0.8s;
-    margin-left: 40px;
+    margin-left: -0px;
     width: 30%;
     height: auto;
-    margin-right: 10px;
+    margin-right: -0vw;
 }
 
+.triangles{
+    position: relative;
+    top: -240px;
+    left: 3vw;
+}
 
 .triangle{
     margin-top: -30px;
@@ -197,7 +208,7 @@ video{
 
 .triangle2{
     margin-top: -20px;
-    margin-left: -13vw;
+    margin-left: 23vw;
     width: 0;
     height: 0;
     border-left: 25px solid transparent;
@@ -207,7 +218,7 @@ video{
 
 .triangle3{
     margin-top: -23px;
-    margin-left: -5vw;
+    margin-left: 21vw;
     width: 0;
     height: 0;
     border-left: 20px solid transparent;
@@ -215,18 +226,14 @@ video{
     border-top: 20px solid #ffffff;
 }
 
-/* .pic  {
-    display: flex;
-    position: absolute;
-    height: 300px;
-    font-size: 18px;
-    font-weight: 400;
-    margin: 300px 40px;
-    color: #fff;
-    max-width: 700px;
-    top: 45vw;
-    left: 70vw;
-} */
+.slide{
+    height: 00px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    text-align: center;
+    overflow: hidden;
+}
 
 
 

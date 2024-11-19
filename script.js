@@ -1,5 +1,5 @@
 let currentSection = 0;
-const sections = document.querySelectorAll('section');
+const sections = document.querySelectorAll('.a');
 
 window.addEventListener('wheel', function(event) {
   if (event.deltaY > 0) {
