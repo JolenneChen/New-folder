@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lantern Festival</title>
     <link rel="stylesheet" href="style.css">
-    
+    <script src="script.js" defer></script>
 </head>
 <!-- Option 3
 For web development, HTML/CSS with JavaScript allows building
 an interactive platform where players can customize parade
 elements and share their designs.
  -->
+
 <body>
     <header>
         <nav>
@@ -32,33 +34,51 @@ elements and share their designs.
         </div>
     </section>
     <section>
-        <div class="background-section a" id="Description">
+        <div class="background-section" id="Description">
             <img src="/mp3/Untitled6_20241118214222.png" alt="a" class="gi" width="100%">
             <div class="slider">
-                <span id="slide-1"></span>
-                <span id="slide-2"></span>
-                <span id="slide-3"></span>
                 <div class="slide">
                     <div class="box">
-                        <img src="mp3/c4c7138382f6a7d0e5ba7812f8f1c5c2.jpg" alt="a" width="30%" >
-                        <p>Lunar New Year is celebrated in East and Southeast Asia it marks the start of the lunar calendar year,  between January 21 and February 20. It's a time where family reunions, feasting, giving red envelopes for luck, and enjoying parades with dragon and lion dances. The festival is linked to the Chinese zodiac, and symbolizes renewal, good fortune, and honoring ancestors.</p>  
-                        <div class="triangles">
-                            <div class="triangle"></div>
-                            <div class="triangle2"></div>
-                            <div class="triangle3"></div>  
-                        </div>                    
-                    </div>   
-                     <div class="box">
-                        
-                     </div>
-
+                        <div class="sliding" id="slide-1">
+                            <img src="mp3/c4c7138382f6a7d0e5ba7812f8f1c5c2.jpg" alt="a" width="100%">
+                            <p>Lunar New Year is celebrated in East and Southeast Asia it marks the start of the lunar
+                            calendar year, between January 21 and February 20. It's a time where family reunions,
+                            feasting, giving red envelopes for luck, and enjoying parades with dragon and lion dances.
+                            The festival is linked to the Chinese zodiac, and symbolizes renewal, good fortune, and
+                            honoring ancestors.</p>
+                        </div>
+                        <div class="sliding" id="slide-2">
+                            <h1>The Chinese Zodiacs</h1>
+                            <img src="/mp3/Rat.png" alt="Rat" class="zodiac">
+                            <img src="/mp3/ox.png" alt="Ox" class="zodiac">
+                            <img src="/mp3/tiger.png" alt="Tiger" class="zodiac">
+                            <img src="/mp3/rabbit.png" alt="Rabbit" class="zodiac">
+                            <img src="/mp3/Dragon.png" alt="Dragon" class="zodiac">
+                            <img src="/mp3/snake.png" alt="Snake" class="zodiac">
+                            <img src="/mp3/horse.png" alt="Horse" class="zodiac">
+                            <img src="/mp3/goat.png" alt="Goat" class="zodiac">
+                            <img src="/mp3/monkey.png" alt="Monkey" class="zodiac">
+                            <img src="/mp3/rooster.png" alt="Rooster" class="zodiac">
+                            <img src="/mp3/dog.png" alt="Dog" class="zodiac">
+                            <img src="/mp3/pig.png" alt="Pig" class="zodiac">
+                        </div>
+                        <div class="sliding" id="slide-3">
+                            <h1>a</h1>
+                        </div>                       
+                    </div>
+                    <div class="triangles">
+                        <div class="triangle"></div>
+                        <div class="triangle2"></div>
+                        <div class="triangle3"></div>
+                    </div>
                 </div>
+            </div>
             <div class="button">
-                <a href="#slide-1"></a>
-                <a href="#slide-2"></a>
-                <a href="#slide-3"></a>    
+                <button class="prev">Previous</button>
+                <button class="next">Next</button>              
             </div>
         </div>
     </section>
 </body>
+
 </html>
