@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const slides = document.querySelectorAll('.sliding'); // Select all slides
   const prevButton = document.querySelector('.prev');  // Previous button
   const nextButton = document.querySelector('.next');  // Next button
-  let currentSlide = 0; // Index of the current slide
+  const box = document.querySelector('.box');          // The box to reposition
+  let currentSlide = 0;                                // Index of the current slide
 
   // Function to update slides
   function updateSlides() {
@@ -27,6 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
           slide.classList.remove('active'); // Hide all slides
       });
       slides[currentSlide].classList.add('active'); // Show the current slide
+
+      // Check if on the last slide and update the box position
+      if (currentSlide === slides.length - 1) {
+          box.classList.add('end-position'); // Add class for new position
+      } else {
+          box.classList.remove('end-position'); // Remove class for default position
+      }
   }
 
   // Move to the next slide
