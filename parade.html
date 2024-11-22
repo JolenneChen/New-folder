@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="parade.css">
+
+
+</head>
+<body>
+    <div class="slide" id="section1">
+        <p>In this page, we'll decorate our own <span class="highlight">Dragon</span> !</p>
+    </div>  
+    <div class="slide" id="section2">
+        <div class="dragon-selector">
+            <h2>Pick Your Dragon</h2>
+            <div class="dragons">
+                <img src="mp3/dog.png" alt="Dragon 1" class="dragon" id="dragon1" draggable="true">
+                <img src="mp3/dog.png" alt="Dragon 2" class="dragon" id="dragon2" draggable="true">
+                <img src="mp3/dog.png" alt="Dragon 3" class="dragon" id="dragon3" draggable="true">
+            </div>
+            <button id="selectDragonBtn">Select Dragon</button>
+        </div>
+    </div>  
+    <div class="slide" id="section3">
+        <div class="parade-area" id="paradeArea">
+            <h2>Your Parade</h2>
+            <div class="parade" id="parade"></div>
+        </div>
+    </div>
+    <script src="parade.js" defer></script>
+</body>
+</html>

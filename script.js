@@ -52,3 +52,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize the slider
   updateSlides();
 });
+
+
+const thumbnails = document.querySelectorAll('.Celebret');
+
+// Get the main display image
+const mainImage = document.getElementById('mainImage');
+
+// Add event listeners to each thumbnail image
+thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', (event) => {
+        // Get the src of the clicked thumbnail
+        const newSrc = event.target.src;
+        
+        // Change the src of the main image to the clicked thumbnail's image
+        mainImage.src = newSrc;
+    });
+});

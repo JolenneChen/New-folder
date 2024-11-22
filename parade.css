@@ -1,0 +1,185 @@
+html,body{
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden; 
+    }    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.slide {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    text-align: center;
+    background-color: lightgray;
+    border-bottom: 1px solid #ccc;
+    transition: transform 0.5s ease; /* Fast scroll transition */
+  }
+
+.slide p{
+    font-size: 40px;
+    
+}
+
+.slide .highlight{
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(230deg, #ccb797 0%, #ffaf9b 25%, #f7a19b 50%, #d62019 75%, #ff0000 100%);
+    background-size: 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 15s linear infinite;
+}
+
+@keyframes animate {
+    to{
+        background-position: 400px;
+    }
+}
+
+#section1 { background-color: rgb(99, 76, 76); }
+#section2 { background-color: rgb(0, 191, 255); }
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 20px;
+}
+
+/* Section Styling */
+.slide {
+    margin-bottom: 40px;
+}
+
+/* Title Styling */
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #ff5733; /* Highlight color for the word "Dragon" */
+    font-weight: bold;
+}
+
+/* Dragon Selector Section */
+.dragon-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dragon-selector h2 {
+    margin-bottom: 20px;
+}
+
+.dragons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+#selectDragonBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#selectDragonBtn:hover {
+    background-color: #ff4500;
+}
+
+/* Parade Area Section */
+.parade-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.parade-area h2 {
+    margin-bottom: 20px;
+}
+
+.parade {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Set the size of the parade area */
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    overflow: hidden;
+}
+
+/* Style for the image placed in the Parade */
+.parade img {
+    position: absolute;
+    width: 100px; /* Fixed size for the dragon image */
+    height: auto; /* Maintain aspect ratio */
+    cursor: move;
+    transition: transform 0.3s ease;
+}
+
+.parade img:hover {
+    transform: scale(1.1);
+}
+
+/* Style for the Dragon Selector */
+.dragon-selector {
+    text-align: center;
+}
+
+.dragons {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.dragon {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dragons {
+        flex-direction: column;
+    }
+
+    .parade-area {
+        height: 250px; /* Smaller parade area for mobile */
+    }
+}
