@@ -13,11 +13,20 @@ html,body{
     box-sizing: border-box;
 }
 
-.slide {
-    height: 100vh; /* Full viewport height */
+#section1 { background-color: rgb(99, 76, 76); }
+#section2 { background-color: rgb(0, 191, 255); }
+
+
+#section-1, .slide{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+
+.slide {
+    height: 100vh; /* Full viewport height */
     font-size: 2em;
     text-align: center;
     background-color: lightgray;
@@ -27,7 +36,7 @@ html,body{
 
 .slide p{
     font-size: 40px;
-    
+   
 }
 
 .slide .highlight{
@@ -46,25 +55,6 @@ html,body{
     }
 }
 
-#section1 { background-color: rgb(99, 76, 76); }
-#section2 { background-color: rgb(0, 191, 255); }
-
-
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    padding: 20px;
-}
 
 /* Section Styling */
 .slide {
@@ -82,28 +72,48 @@ h1, h2 {
     font-weight: bold;
 }
 
+#section-2{
+    width: 100%;
+}
+
 /* Dragon Selector Section */
 .dragon-selector {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     padding: 20px;
-    background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .dragon-selector h2 {
-    margin-bottom: 20px;
+    text-align: left;
+    top: 110%;
 }
 
+.thumbnail {
+    display: flex;
+    flex-direction: column; /* Stack thumbnails vertically */
+    gap: 20px; /* Space between thumbnails */
+    margin: 0;
+}
+
+/* Style for the Dragon Selector */
 .dragons {
     display: flex;
-    gap: 20px;
-    justify-content: center;
+    flex-wrap: wrap; /* Allow images to wrap to a new row if needed */
+    gap: 10px; /* Space between the images */
+    justify-content: flex-start; /* Align dragons to the left */
+    width: 100%;
+}
+
+.dragon {
+    width: 100px; /* Size of each dragon image */
+    height: auto;
+    cursor: pointer;
 }
 
 #selectDragonBtn {
+    align-items: flex-start;
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
@@ -143,35 +153,54 @@ h1, h2 {
     overflow: hidden;
 }
 
-/* Style for the image placed in the Parade */
-.parade img {
-    position: absolute;
-    width: 100px; /* Fixed size for the dragon image */
-    height: auto; /* Maintain aspect ratio */
-    cursor: move;
-    transition: transform 0.3s ease;
-}
-
-.parade img:hover {
-    transform: scale(1.1);
-}
-
-/* Style for the Dragon Selector */
-.dragon-selector {
-    text-align: center;
-}
-
-.dragons {
-    display: flex;
-    justify-content: space-around;
-    gap: 10px;
-}
-
-.dragon {
-    width: 100px;
-    height: auto;
+/* Selected dragon button */
+#paradeButtons button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
+
+#paradeButtons button:hover {
+    background-color: #218838;
+}
+
+/* Parade dragon size */
+.parade img {
+    width: 100px; /* Fixed size for dragons */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute;
+    cursor: move;
+}
+/* Style for the Parade Area Section */
+.parade-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.parade-area h2 {
+    margin-bottom: 20px;
+}
+
+.parade {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Set the size of the parade area */
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    overflow: hidden;
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
