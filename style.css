@@ -18,20 +18,24 @@
     border: 0;
     margin: 0;
     padding: 0;
-    /*padding and border are included in the width and height*/
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
 }
 
+body{
+    justify-content: center; /* Horizontally center */
+    align-items: center;
+}
+
 body, html{
     margin: 0;
-    padding: 0;
     height: 100%;
+    overflow: hidden;
 }
 
 .a{
-    height: 100vh; /* Full viewport height */
+    height: 100vh; 
     width: 100%;
     display: flex;
     justify-content: center;
@@ -46,7 +50,7 @@ body, html{
 
 nav{
     position: fixed;
-    background-color: #a54545;
+    background-color: #974747;
     color: white;
     margin: 0;
     padding: 0;
@@ -72,7 +76,6 @@ nav ul li{
 
 nav ul li a{
     display: block;
-    /* 15px : top bottom, 20px : left right */
     padding: 15px 140px;
     text-decoration: none;
     color: #fff;
@@ -83,58 +86,60 @@ nav ul li a{
 }
 
 nav ul li a:hover{
-    background-color: #da7676;
+    background-color: #b15151;
 }
 
 #home{
     background-color: #323a55;
-    z-index: -20;
+    z-index: 1;
     height: 100vh;
 }
 
+.main.a{
+    position: relative; 
+    background-image: url('/mp3/bg.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    height: 100vh; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+.text{
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    margin-top: -3%;
+    margin-right: 5%;
+    color: #fff;
+    letter-spacing: 4px ;
+    transition: 0.8s ;
 
-video{
-    z-index: 1;
+}
+
+.text img {
+    width: 70%;
+    margin-left: 5%;
+    transition: 0.5;
+}
+
+.shadow-overlay {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    margin: 0 auto;
-    position: relative;
-    margin-bottom: 0;
-    
+    background: rgba(0, 0, 0, 0.5); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
 }
-
-
-.text{
-    justify-content: center;
-    align-items: center;
-    top: 48%;
-    position: absolute;
-    z-index: 10;
-    padding-top: 20px;
-    margin-right: 40%;
-    color: #fff;
-    letter-spacing: 4px ;
-    transition: 0.8s ;
-}
-
-.text h1 {
-    font-size: 48px;
-    font-weight: 800;
-    color: #fff;
-    line-height: 32px;
-
-}
-
-
 
 .background-section{
     position: relative;
+    width: 100%;
     height: 100vh;
-    background-color: #c07878;
-    /* overflow: hidden; */
+    background-color: #a14949;
+
  
 }
 
@@ -157,24 +162,25 @@ video{
 
 .box{
     transition: 0.8s;
-    padding: 20px;
+    padding: 10px;
     width: 70%;
     height: 70vh;
-    transform: translate(0%,29%);
-    display: flex;
+
+    justify-content: center;
+    align-items: center;
     z-index: 20;
+    flex-direction: column;
     position: absolute;
-    background: linear-gradient(180deg,#a35b5b,#b96969,#ca7171,#da918f);
-    border-top: 30px solid rgb(223, 114, 114);
-    border-bottom: 30px solid rgb(223, 114, 114);
-    border-left: 15px solid #d46464;
-    border-right: 15px solid #d46464;
+    top: 14%;
+    left: 15%;
+    background: linear-gradient(180deg,#7e4a4a,#9b5252,rgb(221, 98, 98),rgb(235, 89, 89));
+    border-top: 30px solid rgb(116, 45, 45);
+    border-bottom: 30px solid rgb(116, 45, 45);
+    border-left: 15px solid rgb(148, 55, 55);
+    border-right: 15px solid rgb(148, 55, 55);
     border-radius: 8px;
     box-sizing: border-box;
     overflow: hidden;
-    
-    /*  */
-    
 }
 
 .box::before {
@@ -188,8 +194,8 @@ video{
 
 .box.end-position {
     width: 70%;
-    height: 80vh;
-    transform: translate(0%, 23%); /* Adjust to your desired position */
+    height: 72vh;
+    transform: translate(0%, 0%); /* Adjust to your desired position */
     transition: transform 0.5s ease;   /* Smooth transition for position change */
 
 }
@@ -197,8 +203,8 @@ video{
 
 .triangles{
     position: relative;
-    top: -50px;
-    margin-left: 19%;
+    top: 22%;
+    margin-left: 49%;
     z-index: 20;
 }
 
@@ -237,29 +243,29 @@ video{
     display: flex;
     position: relative;
     width: 100%;
-    top: 30%;
+    height: 100%;
+    top: 0%;
     transition: transform 0.5s ease;
 }
 
 .slide {
-    flex: 0 0 100%; /* Each slide takes full width */
-    display: flex;
+    flex: 0 0 100%;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     overflow: hidden;
     transition: opacity 0.5s ease-in-out;
+    height: 100vh;
+    width: 100vw;
+    transform: none;
 }
 
 .sliding {
     height: 100%;
-    width: 100%; /* Adjust this as needed */
+    width: 100%; 
     display: flex;
-    /* padding: 20px;
-    margin: 0;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
     opacity: 0;
+    position: relative;
 }
 
 .sliding img {
@@ -269,17 +275,17 @@ video{
 }
 
 #slide-1 img {
-    width: 50%;
+    width: 30%;
     height: auto;
     margin-left: 30px;
-    margin-top: 25px;
+    transition: 0.5s;
 }
 
 #slide-1 p {
     transition: 0.8s;
-    margin-left: 21vw;
+    margin-left: 25vw;
     margin-right: 60px;
-    margin-top: -38vh;
+    margin-top: 10%;
     position: absolute;
     text-align: center;
     display: inline-block;
@@ -290,9 +296,14 @@ video{
 }
 
 
+#slide-2{
+    width: 100%;
+
+}
+
 #slide-2 h1 {
     position: absolute;
-    top: 0;
+    top: -20px;
     left: 50%;
     margin-top: 10px;
     transform: translateX(-50%); 
@@ -313,9 +324,8 @@ video{
 
 #slide-3 h1 {
     position: absolute;
-    top: 0;
     left: 50%;
-    margin-top: 10px;
+    margin-top: -40px;
     transform: translateX(-50%);  /* This moves it left by 50% of its width */
     z-index: 10; 
 }
@@ -347,11 +357,9 @@ video{
 /* Main image display */
 .main-display {
     width: 100%;
-    margin-top: 60px;
-    flex: 1; /* Take up the remaining space in the container */
-    display: flex; /* Use flexbox to center the image */
-    justify-content: center; /* Center the image horizontally */
-    align-items: center; /* Center the image vertically */
+    margin-top: 20px;
+    flex: 1; 
+    margin-left: 8%;
 }
 
 .main-display img {
@@ -361,9 +369,23 @@ video{
     border: 2px solid #ccc;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+
+.main-display p {
+    margin-top: 20px;
+    font-size: 19px;
+    margin-right: 34%;
+}
+.Right{
+    width: 70%;
+    top: -20px;
+    position: absolute;
+    right: 0;
+    transform: translateX(32%);
+}
+
 /* Active Slide */
 .sliding.active {
-    display: block;
+    display: flex;
     opacity: 1;
 }
 
@@ -374,7 +396,7 @@ video{
 
 .button {
     position: absolute;
-    bottom: 30px;
+    bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -397,39 +419,41 @@ button:hover {
     background: #e68c8c;
 }
 
-#slide-2{
-    width: 100%;
-}
-
-.zodiac {
-    width: 100px; /* Image width */
-    height: 100px; /* Image height */
-    object-fit: cover; /* Maintain aspect ratio and cover the container */
-    transition: transform 0.3s ease; /* Hover zoom effect */
-}
 
 .zodiac:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
+    transform: scale(1.9); /* Slight zoom effect on hover */
 }
+
 
 /* Container styles (Grid Layout) */
 .zodiac-container {
+    margin-bottom: 0px;
     margin-top: 15px;
-    margin-left: 30px;
+    /* margin-left: 30px; */
     display: grid; /* Use CSS Grid */
-    grid-template-columns: repeat(4, 120px); /* 4 columns, each taking up equal space */
-    column-gap: 170px; /* Horizontal gap between images (left and right) */
-    row-gap: 40px;
-    justify-content: center; /* Center the grid items */
+    grid-template-columns: repeat(8, 110px); 
+    grid-template-rows: repeat(3, 1fr); 
     padding: 20px;
     box-sizing: border-box;
-    width: 100%; /* Ensure container spans the full width */
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  
+}
+.zodiac-container img {
+    width: 90%; 
+    height: auto; 
 }
 
-/* Grid item (image) styles */
-.zodiac-container img {
-    width: 100%; /* Ensure images take full column width */
-    height: auto; /* Maintain aspect ratio */
+.zodiac-description {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 23px; /* Adjust font size */
+    margin-top: 20px;
+    margin-left: 0px; /* Add spacing between image and text */
+    color: #000000; /* Optional: Change the color */
 }
 
 .bg{
@@ -439,7 +463,7 @@ button:hover {
     align-items: center;
     font-size: 2em;
     text-align: center;
-    background-color: rgb(99, 76, 76);
+    background-color: rgb(97, 51, 51);
     border-bottom: 1px solid #ccc;
     transition: transform 0.5s ease;
 }

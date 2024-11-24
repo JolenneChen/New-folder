@@ -1,16 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700;800&display=swap');
+
 html,body{
-    body, html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        overflow: hidden; 
-    }    
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; 
+    font-family: 'Poppins', sans-serif;  
 }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+nav{
+    position: fixed;
+    background-color: #a54545;
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    z-index: 1000;
+    border-top: 2px solid #fff2f2;
+    border-bottom: 2px solid #fff2f2;
+
+}
+
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    
+}
+
+nav ul li{
+    margin: 0;
+}
+
+nav ul li a{
+    display: block;
+    padding: 15px 140px;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 20px;
+    z-index: 10000;
+
+}
+
+nav ul li a:hover{
+    background-color: #da7676;
 }
 
 #section1 { background-color: rgb(99, 76, 76); }
@@ -36,7 +78,8 @@ html,body{
 
 .slide p{
     font-size: 40px;
-   
+    transition: 0.9s;
+
 }
 
 .slide .highlight{
@@ -83,18 +126,20 @@ h1, h2 {
     align-items: flex-start;
     padding: 20px;
     border-radius: 8px;
+    margin-left: -70%;
 }
 
 .dragon-selector h2 {
     text-align: left;
     top: 110%;
+    background-color: white;
 }
 
 .thumbnail {
     display: flex;
     flex-direction: column; /* Stack thumbnails vertically */
     gap: 20px; /* Space between thumbnails */
-    margin: 0;
+    margin-left: 120px;
 }
 
 /* Style for the Dragon Selector */
@@ -122,36 +167,13 @@ h1, h2 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-left: 27%;
 }
 
 #selectDragonBtn:hover {
     background-color: #ff4500;
 }
 
-/* Parade Area Section */
-.parade-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.parade-area h2 {
-    margin-bottom: 20px;
-}
-
-.parade {
-    position: relative;
-    width: 100%;
-    height: 400px; /* Set the size of the parade area */
-    background-color: #e0e0e0;
-    border-radius: 8px;
-    border: 2px solid #ccc;
-    overflow: hidden;
-}
 
 /* Selected dragon button */
 #paradeButtons button {
@@ -176,7 +198,7 @@ h1, h2 {
     position: absolute;
     cursor: move;
 }
-/* Style for the Parade Area Section */
+Style for the Parade Area Section
 .parade-area {
     display: flex;
     flex-direction: column;
@@ -193,8 +215,8 @@ h1, h2 {
 
 .parade {
     position: relative;
-    width: 100%;
-    height: 400px; /* Set the size of the parade area */
+    width: 100vh;
+    height: 70vh;
     background-color: #e0e0e0;
     border-radius: 8px;
     border: 2px solid #ccc;
