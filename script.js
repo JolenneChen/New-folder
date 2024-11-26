@@ -69,3 +69,26 @@ thumbnails.forEach(thumbnail => {
         imageDescription.textContent = newDescription;
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const bgSections = document.querySelectorAll(".bgSection");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    target.classList.remove("animate");
+                    void target.offsetWidth;
+                    target.classList.add("animate");
+                }
+            });
+        },
+        {
+            threshold: 0.5,
+        }
+    );
+
+    bgSections.forEach((section) => observer.observe(section));
+});

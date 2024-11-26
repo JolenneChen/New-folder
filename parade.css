@@ -65,6 +65,7 @@ nav ul li a:hover{
     align-items: center;
     text-align: center;
     height: 100vh;
+    z-index: 10;
 }
 
 .slide {
@@ -116,11 +117,17 @@ h1, h2 {
 }
 
 #section-2{
-    width: 100%;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    height: 100vh;
+    overflow: hidden;
+    transition: transform 1s ease-out, background-color 1s ease-out, background-image 1s ease-out;
 }
 
 /* Dragon Selector Section */
 .dragon-selector {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -133,13 +140,16 @@ h1, h2 {
     text-align: left;
     top: 110%;
     background-color: white;
+    z-index: 2;
 }
 
 .thumbnail {
     display: flex;
+    justify-content: center;
     flex-direction: column; /* Stack thumbnails vertically */
     gap: 20px; /* Space between thumbnails */
     margin-left: 120px;
+    z-index: 10;
 }
 
 /* Style for the Dragon Selector */
@@ -154,7 +164,11 @@ h1, h2 {
 .dragon {
     width: 100px; /* Size of each dragon image */
     height: auto;
-    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.dragon:hover {
+    transform: scale(1.1);
 }
 
 #selectDragonBtn {
@@ -168,12 +182,37 @@ h1, h2 {
     border-radius: 5px;
     cursor: pointer;
     margin-left: 27%;
+    z-index: 10;
 }
 
 #selectDragonBtn:hover {
     background-color: #ff4500;
+    z-index: 10;
 }
 
+
+.dragon-background {
+    position: absolute;  /* Positioned inside the section */
+    top: 0;
+    left: 0;
+    width: 100%;  /* Full width of the section */
+    height: 100%;  /* Full height of the section */
+    background-size: cover; 
+    background-position: center;  /* Center the image */
+    background-repeat: no-repeat;
+    transform: translateY(100%);  /* Initially hidden */
+    transition: transform 1s ease-out, background-color 1s ease-out, background-image 1s ease-out;
+    z-index: 1;  /* Position the background behind the content */
+}
+
+
+.dragon-background img{
+    display: none;
+}
+
+#section-3{
+    z-index: 10;
+}
 
 /* Selected dragon button */
 #paradeButtons button {
@@ -185,6 +224,7 @@ h1, h2 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    
 }
 
 #paradeButtons button:hover {
@@ -193,12 +233,13 @@ h1, h2 {
 
 /* Parade dragon size */
 .parade img {
-    width: 100px; /* Fixed size for dragons */
+    width: 100px; /* Default size for dragons */
     height: auto; /* Maintain aspect ratio */
     position: absolute;
     cursor: move;
+    transition: all 0.3s ease;
 }
-Style for the Parade Area Section
+
 .parade-area {
     display: flex;
     flex-direction: column;
@@ -215,13 +256,29 @@ Style for the Parade Area Section
 
 .parade {
     position: relative;
-    width: 100vh;
-    height: 70vh;
-    background-color: #e0e0e0;
+    width: 100vw;  /* Full width of the viewport */
+    height: 70vh;  /* Full height of the viewport */
+    background-image: url('mp3'); /* Set a background image for the parade */
+    background-size: cover;
+    background-position: center;
     border-radius: 8px;
     border: 2px solid #ccc;
     overflow: hidden;
 }
+
+/* Dragon Selector Section */
+.thumbnail {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dragon {
+    width: 100px; /* Initial thumbnail size */
+    height: auto;
+    cursor: pointer;
+}
+
 
 
 /* Responsive adjustments */
