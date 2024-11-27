@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateSlides() {
       slides.forEach((slide, index) => {
-          slide.classList.remove('active');  // Hide all slides
+          slide.classList.remove('active'); 
       });
-      slides[currentSlide].classList.add('active');  // Show the current slide
+      slides[currentSlide].classList.add('active'); 
 
       if (currentSlide === slides.length - 1) {
           box.classList.add('end-position');
@@ -56,39 +56,38 @@ const imageDescription = document.getElementById('imageDescription');
 // Add event listeners to each thumbnail image
 thumbnails.forEach(thumbnail => {
     thumbnail.addEventListener('click', (event) => {
-        // Get the src of the clicked thumbnail
         const newSrc = event.target.src;
         
-        // Get the description associated with this thumbnail
         const newDescription = event.target.getAttribute('data-description');
         
-        // Change the src of the main image to the clicked thumbnail's image
         mainImage.src = newSrc;
         
-        // Update the description text
         imageDescription.textContent = newDescription;
     });
 });
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const bgSections = document.querySelectorAll(".bgSection");
+    const sections = document.querySelectorAll(".slide-section"); 
+    const animatedElements = document.querySelectorAll("[data-animate]"); 
 
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const target = entry.target;
-                    target.classList.remove("animate");
-                    void target.offsetWidth;
-                    target.classList.add("animate");
-                }
-            });
-        },
-        {
-            threshold: 0.5,
-        }
-    );
+    const observerOptions = {
+        root: null, 
+        threshold: 0.5, 
+    };
 
-    bgSections.forEach((section) => observer.observe(section));
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const animated = entry.target.querySelectorAll("[data-animate]");
+                animated.forEach((element) => {
+                    element.classList.remove("animated"); 
+                    void element.offsetWidth; 
+                    element.classList.add("animated"); 
+                });
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach((section) => observer.observe(section));
 });

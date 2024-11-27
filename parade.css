@@ -56,7 +56,7 @@ nav ul li a:hover{
 }
 
 #section1 { background-color: rgb(99, 76, 76); }
-#section2 { background-color: rgb(0, 191, 255); }
+#section2 { background-color: rgb(139, 113, 113); }
 
 
 #section-1, .slide{
@@ -69,12 +69,12 @@ nav ul li a:hover{
 }
 
 .slide {
-    height: 100vh; /* Full viewport height */
+    height: 100vh; 
     font-size: 2em;
     text-align: center;
     background-color: lightgray;
     border-bottom: 1px solid #ccc;
-    transition: transform 0.5s ease; /* Fast scroll transition */
+    transition: transform 0.5s ease; 
   }
 
 .slide p{
@@ -112,7 +112,7 @@ h1, h2 {
 }
 
 .highlight {
-    color: #ff5733; /* Highlight color for the word "Dragon" */
+    color: #ff5733; 
     font-weight: bold;
 }
 
@@ -146,23 +146,22 @@ h1, h2 {
 .thumbnail {
     display: flex;
     justify-content: center;
-    flex-direction: column; /* Stack thumbnails vertically */
-    gap: 20px; /* Space between thumbnails */
-    margin-left: 120px;
+    flex-direction: column;
+    gap: 20px; 
     z-index: 10;
 }
 
 /* Style for the Dragon Selector */
 .dragons {
     display: flex;
-    flex-wrap: wrap; /* Allow images to wrap to a new row if needed */
-    gap: 10px; /* Space between the images */
-    justify-content: flex-start; /* Align dragons to the left */
+    flex-wrap: wrap; 
+    gap: 10px;
+    justify-content: flex-start; 
     width: 100%;
 }
 
 .dragon {
-    width: 100px; /* Size of each dragon image */
+    width: 100px; 
     height: auto;
     transition: transform 0.3s ease;
 }
@@ -192,17 +191,17 @@ h1, h2 {
 
 
 .dragon-background {
-    position: absolute;  /* Positioned inside the section */
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;  /* Full width of the section */
-    height: 100%;  /* Full height of the section */
+    width: 100%; 
+    height: 100%; 
     background-size: cover; 
-    background-position: center;  /* Center the image */
+    background-position: center; 
     background-repeat: no-repeat;
-    transform: translateY(100%);  /* Initially hidden */
+    transform: translateY(100%);  
     transition: transform 1s ease-out, background-color 1s ease-out, background-image 1s ease-out;
-    z-index: 1;  /* Position the background behind the content */
+    z-index: 1;  
 }
 
 
@@ -212,6 +211,7 @@ h1, h2 {
 
 #section-3{
     z-index: 10;
+    height: 100vh;
 }
 
 /* Selected dragon button */
@@ -233,8 +233,8 @@ h1, h2 {
 
 /* Parade dragon size */
 .parade img {
-    width: 100px; /* Default size for dragons */
-    height: auto; /* Maintain aspect ratio */
+    width: 100px;
+    height: auto; 
     position: absolute;
     cursor: move;
     transition: all 0.3s ease;
@@ -244,26 +244,32 @@ h1, h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #ffffff;
+    background-color: #747474;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
 }
 
 .parade-area h2 {
-    margin-bottom: 20px;
+    margin-bottom: 2px;
+}
+
+.parade-area p {
+    font-size: 20px;
 }
 
 .parade {
     position: relative;
-    width: 100vw;  /* Full width of the viewport */
-    height: 70vh;  /* Full height of the viewport */
-    background-image: url('mp3'); /* Set a background image for the parade */
+    width: 100vw;  
+    height: 70vh;  
+    background-image: url('mp3');
     background-size: cover;
     background-position: center;
     border-radius: 8px;
     border: 2px solid #ccc;
     overflow: hidden;
+    background-image: url(mp3/An\ empty\ lunar\ new\ year\ parade\(There\ should\ be\ a\ big\ space\ in\ the\ middle.\)\ But\ the\ building\ lights\ a...\ \(1\).png);
 }
 
 /* Dragon Selector Section */
@@ -274,11 +280,39 @@ h1, h2 {
 }
 
 .dragon {
-    width: 100px; /* Initial thumbnail size */
+    width: 100px; 
     height: auto;
     cursor: pointer;
 }
 
+.parade-dragon {
+    position: absolute;
+    display: inline-block;
+    cursor: move;
+    height: auto;
+    border: 1px solid transparent; 
+}
+
+
+/* The dragon image inside the container */
+.parade-dragon img {
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+}
+
+/* The resize handle */
+.resize-handle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    cursor: nwse-resize;
+    z-index: 10;
+    border-radius: 50%;
+}
 
 
 /* Responsive adjustments */
@@ -288,6 +322,6 @@ h1, h2 {
     }
 
     .parade-area {
-        height: 250px; /* Smaller parade area for mobile */
+        height: 250px; 
     }
 }

@@ -2,14 +2,14 @@
 
 @media (max-width: 768px) {
     .zodiac {
-        width: 80px; /* Adjust image size for smaller screens */
+        width: 80px;
         height: 80px;
     }
 }
 
 @media (max-width: 480px) {
     .zodiac {
-        width: 60px; /* Adjust for very small screens */
+        width: 60px; 
         height: 60px;
     }
 }
@@ -24,7 +24,7 @@
 }
 
 body{
-    justify-content: center; /* Horizontally center */
+    justify-content: center; 
     align-items: center;
 }
 
@@ -184,19 +184,19 @@ nav ul li a:hover{
 }
 
 .box::before {
-    content: ''; /* Necessary for pseudo-elements to appear */
+    content: '';
     position: absolute;
-    top: -45px; /* Adjusts the position of the dashed border relative to the solid border */
+    top: -45px; 
     left: 0;
-    width: 100%; /* Full width of the element */
+    width: 100%;
     border-top: 15px dashed rgb(224, 63, 42); 
 }
 
 .box.end-position {
     width: 70%;
     height: 72vh;
-    transform: translate(0%, 0%); /* Adjust to your desired position */
-    transition: transform 0.5s ease;   /* Smooth transition for position change */
+    transform: translate(0%, 0%);
+    transition: transform 0.5s ease;  
 
 }
 
@@ -308,6 +308,8 @@ nav ul li a:hover{
     margin-top: 10px;
     transform: translateX(-50%); 
     z-index: 10; 
+    color: white;
+
 }
 
 
@@ -326,32 +328,33 @@ nav ul li a:hover{
     position: absolute;
     left: 50%;
     margin-top: -40px;
-    transform: translateX(-50%);  /* This moves it left by 50% of its width */
+    transform: translateX(-50%);  
     z-index: 10; 
+    color: white;
 }
 
 /* Thumbnails container */
 .thumbnail {
     margin-left: 50px;
     display: flex;
-    flex-direction: column; /* Stack thumbnails vertically */
-    gap: 20px; /* Space between thumbnails */
-    width: 150px; /* Width of the thumbnails section */
+    flex-direction: column; 
+    gap: 20px; 
+    width: 150px; 
 }
 
 /* Individual thumbnail images */
 .Celebret {
     margin-bottom: 40px;
-    width: 150px; /* Full width of the thumbnail container */
-    height: 150px; /* Maintain aspect ratio */
+    width: 150px;
+    height: 150px;
     cursor: pointer;
     border: 10px solid #5a2525;
     transition: transform 0.3s, border-color 0.3s;
-    object-fit: cover; /* Ensure the image fits well */
+    object-fit: cover; 
 }
 
 .Celebret:hover {
-    transform: scale(1.1); /* Zoom on hover */
+    transform: scale(1.1);
 }
 
 /* Main image display */
@@ -365,7 +368,7 @@ nav ul li a:hover{
 .main-display img {
     width: 100%;
     max-width: 500px;
-    height: auto; /* Maintain the aspect ratio */
+    height: auto; 
     border: 2px solid #ccc;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -391,7 +394,7 @@ nav ul li a:hover{
 
 /* Hide inactive slides */
 .sliding:not(.active) {
-    display: none; /* Hide all slides that are not active */
+    display: none; 
 }
 
 .button {
@@ -408,7 +411,7 @@ nav ul li a:hover{
     display: inline-block;
     background-color: #ff6f61;
     padding: 10px 40px;
-    border: 2px solid rgb(156, 97, 122); /* Add border for debugging */
+    border: 2px solid rgb(156, 97, 122);
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
@@ -421,7 +424,7 @@ button:hover {
 
 
 .zodiac:hover {
-    transform: scale(1.9); /* Slight zoom effect on hover */
+    transform: scale(1.9);
 }
 
 
@@ -429,8 +432,7 @@ button:hover {
 .zodiac-container {
     margin-bottom: 0px;
     margin-top: 15px;
-    /* margin-left: 30px; */
-    display: grid; /* Use CSS Grid */
+    display: grid; 
     grid-template-columns: repeat(8, 110px); 
     grid-template-rows: repeat(3, 1fr); 
     padding: 20px;
@@ -446,17 +448,15 @@ button:hover {
     height: auto; 
 }
 
-.zodiac-description {
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+.zodiac-description {  
+    align-items: flex-start;
     font-size: 23px;
-    margin-left: 0px;
+    margin-left: -15px;
     color: #ffffff;
 }
 
 .bg{
-    height: 100vh; /* Full viewport height */
+    height: 100vh; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -492,10 +492,13 @@ button:hover {
 
 .end-img .one{
     transition: 0.5s;
+    animation: 0.5s;
 }
 
 .end-img .two{
     transition: 0.8s;
+    animation: 0.8s;
+
 
 }
 
@@ -525,6 +528,19 @@ button:hover {
     }
 }
 
-.bgSection.animate{
-    transition: transform 0.2s ;
+
+
+.animated {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
